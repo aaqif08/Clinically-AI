@@ -1,4 +1,6 @@
-import { useState } from 'react'
+const fs = require('fs');
+
+const patient = `import { useState } from 'react'
 import { getPatientHistory, getRiskTrend } from '../services/api'
 import RiskTrendChart from '../components/RiskTrendChart'
 import { Search, Loader2, Calendar, Pill, AlertTriangle, Building2 } from 'lucide-react'
@@ -94,4 +96,7 @@ export default function Patient() {
       )}
     </div>
   )
-}
+}`;
+
+fs.writeFileSync('src/pages/Patient.jsx', patient, 'utf8');
+console.log('Patient.jsx fixed successfully!');
